@@ -1,0 +1,188 @@
+:root{
+    /* Colors */
+    --Nutmeg: hsl(14, 45%, 36%);
+    --DarkRaspberry: hsl(332, 51%, 32%);
+    --White: hsl(0, 0%, 100%);
+    --RoseWhite: hsl(330, 100%, 98%);
+    --Eggshell: hsl(30, 54%, 90%);
+    --LightGrey: hsl(30, 18%, 87%);
+    --WengeBrown: hsl(30, 10%, 34%);
+    --DarkCharcoal: hsl(24, 5%, 18%);
+
+    /* Fonts */
+    --fontFamilyYoungSerif: "Young Serif", serif;
+    
+    --fontOutfit: "Outfit", serif;
+
+
+}
+
+/* text */
+body{
+    font-family: var(--fontOutfit);
+    background-color: var(--Eggshell);
+    color: var(--WengeBrown);
+    
+}
+
+/* main titles */
+.mainTitle {
+    font-family: var(--fontFamilyYoungSerif);
+    color: var(--Nutmeg);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Image */
+img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Container */
+.container {
+    width: 660px;
+    border-radius: 25px;
+    background-color: var(--White);
+    padding: 40px;
+    margin-top: 116px;
+    margin-bottom: 116px;
+    line-height: 1.625;
+}
+
+.underline{
+    border-bottom: 1px solid var(--LightGrey);
+    
+}
+
+/* Title */
+#recipe {
+    font-family: var(--fontFamilyYoungSerif);
+    font-weight: 400;
+    color: black;
+}
+
+
+/* ---------- Sections -------- */
+
+/* preparation time section*/
+#preparationTime{
+    background-color: var(--RoseWhite);
+    margin: 30px 0px;
+    padding: 5px 25px;
+    border-radius: 10px;
+}
+
+#preparationTime h3 {
+    color: var(--DarkRaspberry);
+}
+
+
+
+/* ingredients section */
+
+
+/* prepTime, ingredients lists */
+.list li {
+    list-style-type: none;
+    margin: 10px 0;
+    position: relative;
+}
+
+.list li::before {
+    position: absolute;
+    left: -33px;
+    width: 1em;
+    content: '\2022';
+    font-weight: 700;
+}
+
+/* instructions section*/
+.ol_list  {
+    list-style-type: none;
+    counter-reset: item;
+}
+
+.ol_list li{
+    counter-increment: item;
+    margin: 20px 0;
+    
+    position: relative;
+}
+
+.ol_list li::before {
+    position: absolute;
+    left: -33px;
+    width: 1em;
+    content: counter(item)".";
+    font-weight: 700;
+    color: var(--Nutmeg);
+}
+
+.infoStrong {
+    color: var(--Nutmeg);
+}
+
+hr {
+    border-color: var(--LightGrey);
+    
+}
+
+/* Nutrition */
+table{
+    width: 100%;
+    
+}
+
+
+.nutrients {
+    display: flex;
+    flex-direction: column;    
+}
+
+.nutrients div {
+    padding: 15px 35px;    
+}
+
+.nutrients span {
+    font-weight: 700;
+    width: 50%;
+    float: right;
+    color:var(--Nutmeg);
+}
+
+.nutrients div:last-child{
+    margin-bottom: -20px;
+    
+}
+
+/* Mobile */
+
+@media screen and (max-width: 375px) {
+    body {
+        margin: 0;
+        background-color: var(--White);
+    }
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+    .details {
+        padding: 0 30px;
+    }
+
+    img{
+        border-radius: 0;
+    }
+}
